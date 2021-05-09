@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>t检验在统计检验中的原理 - 俞在问的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="俞在问的博客"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="俞在问的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="从几个基本的数理统计概念谈起数学期望数学期望的名称来源于赌博，其意思是在赌博前「期望」赢得的钱是多少。它本不是一个很恰当的命名，但是在概率中已源远流长，获得大家公认，也就站住了脚根。用「均值」则更加形像。在此我们不谈其定义，否则又要介绍概率分布和概率密度的含义，就偏离本文本意了。记随机变量$X$(以后我将把随机变量$X$简记为rv $X$，rv即random variable)的数学期望为$E(X"><meta property="og:type" content="blog"><meta property="og:title" content="t检验在统计检验中的原理"><meta property="og:url" content="http://yusaisai.xyz/2021/05/08/stat/"><meta property="og:site_name" content="俞在问的博客"><meta property="og:description" content="从几个基本的数理统计概念谈起数学期望数学期望的名称来源于赌博，其意思是在赌博前「期望」赢得的钱是多少。它本不是一个很恰当的命名，但是在概率中已源远流长，获得大家公认，也就站住了脚根。用「均值」则更加形像。在此我们不谈其定义，否则又要介绍概率分布和概率密度的含义，就偏离本文本意了。记随机变量$X$(以后我将把随机变量$X$简记为rv $X$，rv即random variable)的数学期望为$E(X"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://yusaisai.xyz/img/og_image.png"><meta property="article:published_time" content="2021-05-08T06:12:08.000Z"><meta property="article:modified_time" content="2021-05-09T08:30:35.583Z"><meta property="article:author" content="俞在问"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@yuzaiwen"><meta property="twitter:site" content="@yuzaiwen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yusaisai.xyz/2021/05/08/stat/"},"headline":"俞在问的博客","image":["http://yusaisai.xyz/img/og_image.png"],"datePublished":"2021-05-08T06:12:08.000Z","dateModified":"2021-05-09T08:30:35.583Z","author":{"@type":"Person","name":"俞在问"},"description":"从几个基本的数理统计概念谈起数学期望数学期望的名称来源于赌博，其意思是在赌博前「期望」赢得的钱是多少。它本不是一个很恰当的命名，但是在概率中已源远流长，获得大家公认，也就站住了脚根。用「均值」则更加形像。在此我们不谈其定义，否则又要介绍概率分布和概率密度的含义，就偏离本文本意了。记随机变量$X$(以后我将把随机变量$X$简记为rv $X$，rv即random variable)的数学期望为$E(X"}</script><link rel="canonical" href="http://yusaisai.xyz/2021/05/08/stat/"><link rel="alternate" href="/atom.xml" title="俞在问的博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;family=Bitter:wght@400;700&amp;family=Fira+Code&amp;display=swap"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container justify-content-center"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="俞在问的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">全部</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/messages">留言</a><a class="navbar-item" href="/about">我</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section" style="margin-top: 1rem"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-05-08T06:12:08.000Z" title="2021-05-08T06:12:08.000Z">2021-05-08</time>发表</span><span class="level-item">约2239字</span></div></div><h1 class="title is-3 is-size-4-mobile">t检验在统计检验中的原理</h1><div class="content"><h1 id="从几个基本的数理统计概念谈起"><a href="#从几个基本的数理统计概念谈起" class="headerlink" title="从几个基本的数理统计概念谈起"></a>从几个基本的数理统计概念谈起</h1><h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><p>数学期望的名称来源于赌博，其意思是在赌博前「期望」赢得的钱是多少。它本不是一个很恰当的命名，但是在概率中已源远流长，获得大家公认，也就站住了脚根。用「均值」则更加形像。在此我们不谈其定义，否则又要介绍概率分布和概率密度的含义，就偏离本文本意了。记随机变量$X$(以后我将把随机变量$X$简记为rv $X$，rv即random variable)的数学期望为$E(X)$。借以大家对均值的理解，我们可以得出以下关于数学期望的性质，我们不予证明：</p>
+<ol>
+<li>设$c$为常数，则$E(c)=c$</li>
+<li>$E(X_1+\cdots +X_n)=E(X_1)+\cdots + E(X_n)$</li>
+<li>$E(aX)=aE(X)$</li>
+</ol>
+<p>数学期望刻画了随机变量取值的平均值，这里的平均值指以概率为权的加权平均。</p>
+<span id="more"></span>
+<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><p>方差刻画了随机变量在其中心位置附近散布的数字特征，其中心位置即数学期望。所以方差定义为随机变量与离数学期望差的平方的数学期望，即：</p>
+<script type="math/tex; mode=display">
+Var(X)=E(X-EX)^2</script><p>现在把括号的平方给展开，对其进行化简：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+Var(X)&=E(X-EX)^2\\
+&=E[X^2-2XEX+(EX)^2]\\
+&=E(X^2)-2EX*EX+(EX)^2\\
+&=E(X^2)-(EX)^2
+\end{align*}</script><p>这个化简很重要，以后要用到。</p>
+<p>方差也有一些重要的性质，同样不予证明：</p>
+<ol>
+<li>设rv $X_1, X_2$独立，则$Var(X_1+X_2)=Var(X_1)+Var(X_2)$</li>
+<li>$Var(aX)=E(a^2X^2)-[E(aX)]^2=a^2E(X^2)-[aE(X)]^2=a^2Var(X)$</li>
+</ol>
+<h1 id="统计三大分布"><a href="#统计三大分布" class="headerlink" title="统计三大分布"></a>统计三大分布</h1><p>我们假设总体的容量有无限个，所以抽取其中任意一个样本对总体的影响是可忽略的；这样来看，有放回的抽样和无放回的抽样在总体无限的情况是无差别的。下面我们也会采取这样的模型，即「无限总体」，这是由英国伟大的统计学家R. A. Fisher提出的。</p>
+<p>样本在数理统计中具有双重性，在抽样前，样本是个随机变量，不同的样本来自同样的总体，它们相互独立，并且分布相同，和总体的分布一样，称为独立同分布，今后简记为iid(identical independent distribution)；在抽样后，样本是一个数。</p>
+<h2 id="卡方分布"><a href="#卡方分布" class="headerlink" title="卡方分布"></a>卡方分布</h2><p>定义： 设rv $X_1, X_2, \cdots , X_n \sim N(0,1)$，则$X_1^2 + \cdots X_n^2 \sim \chi^2_n$ 。即，自由度为n的卡方分布等于n个标准正态分布平方的和。</p>
+<p>卡方分布有一个重要的性质： $\chi^2<em>m + \chi^2_n = \chi^2</em>{m+n}$，其证明就是把定义式写一遍，在此也就不证明了。</p>
+<h2 id="t分布"><a href="#t分布" class="headerlink" title="t分布"></a>t分布</h2><p>定义：设rv $X\sim N(0,1)$， rv $Y\sim \chi^2_n$，则</p>
+<script type="math/tex; mode=display">
+\frac{X}{\sqrt{Y/n}}\sim t(n)</script><p>也就是说，t分布是两个分布的商，分子是标准正态分布，分母是卡方分布除以其自由度后的开方。</p>
+<h2 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h2><p>F分布在今天不会用到，不用还是一并介绍。</p>
+<p>定义： 设rv $X \sim \chi^2_n$，rv $Y \sim \chi^2_m$，则</p>
+<script type="math/tex; mode=display">
+\frac{X/n}{Y/m}\sim F_{m,n}</script><p>F分布也是两个分布的商，分子是一个卡方分布除以其自由度，分母也是一个卡分布除以其自由度。</p>
+<h1 id="几个重要的引理"><a href="#几个重要的引理" class="headerlink" title="几个重要的引理"></a>几个重要的引理</h1><p>设</p>
+<script type="math/tex; mode=display">
+X_1, X_2, \cdots  , X_n\,\, iid \sim N(\mu ,\sigma^2)</script><p>记$\bar{X} = \Sigma_{i=1}^{n}X_i/n$，则</p>
+<p>(1) </p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)</script><p>(2)</p>
+<script type="math/tex; mode=display">
+\frac{\Sigma_{i=1}^n(X_i-\bar{X})^2}{\sigma^2} \sim \chi^2_{n-1}</script><p>(1)等同于证明</p>
+<script type="math/tex; mode=display">
+\bar{X} \sim N(\mu, \frac{\sigma^2}{n})</script><p>也就是说，样本平均值的平均值和总体均值相等，样本方差比方差小。</p>
+<p>我们首先看一下$\bar{X}$，它在此被视为一个随机变量，事实上$\bar{X} = \frac{X_1+\cdots +X_n}{n}$，在还未抽样前，X_1,\cdots ,X_n即为随机变量，因此$\bar{X}$是一个完全由样本决定的量，这样的量称为「样本统计量」；而类似正态分布$N(\mu, \sigma^2)$中的总体平均数$\mu$和总体方差$\sigma^2$称为「参数」。</p>
+<p>(1)的证明需要证明这样的一件事，即正态分布的可加性，也就是说，两个独立的正态分布相加还是正态分布，其均值为两分布的均值之后，其方差为两分布方差之和。即：</p>
+<script type="math/tex; mode=display">
+rv\,X_1 \sim N(\mu_1,\sigma_1^2)\,\,\,\,\, rv\,X_2 \sim N(\mu_2,\sigma_2^2)\\
+X_1 +X_2 \sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)</script><p>这个证明比较麻烦，见<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables，在此同样不证明了。">https://en.wikipedia.org/wiki/Sum_of_normally_distributed_random_variables，在此同样不证明了。</a></p>
+<p>所以</p>
+<script type="math/tex; mode=display">
+X_1+\cdots +X_n \sim N(n\mu, n\sigma^2)</script><p>则：</p>
+<script type="math/tex; mode=display">
+\bar{X} \sim N(\mu, \frac{\sigma^2}{n})</script><p>(2) 证明</p>
+<p>注意$X_i$与$\bar{X}$都是随机变量，如果直接把平方直接展开将无法处理：</p>
+<script type="math/tex; mode=display">
+\frac{\Sigma_{i=1}^n(X_i-\bar{X})^2}{\sigma^2}
+=\frac{1}{\sigma^2}\Sigma_{i=1}^n(X_i^2+\bar{X}^2-2X_i\bar{X})</script><p>不过注意一个分母有个$\sigma^2$，然后我们知道这两件事：</p>
+<script type="math/tex; mode=display">
+\frac{X_i-\mu}{\sigma} \sim N(0,1)\\
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim N(0,1)</script><p>这样构造一下似乎就有其雏形了：</p>
+<script type="math/tex; mode=display">
+(X_i-\bar{X}) = (X_i-\mu)-(\bar{X}-\mu)</script><p>则：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+\frac{1}{\sigma^2}\Sigma_{i=1}^n(X_i-\bar{X})^2&=\frac{1}{\sigma^2}\Sigma_{i=1}^n[(X_i-\mu)-(\bar{X}-\mu)]^2\\
+&=\frac{1}{\sigma^2}\Sigma_{i=1}^n[(X_i-\mu)^2+(\bar{X}-\mu)^2-2(X_i-\mu)(\bar{X}-\mu)]\\
+&=\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2+n(\frac{X_i-\mu}{\sigma})^2-\frac{2(\bar{X}-\mu)}{\sigma^2}\Sigma_{i=1}^n(X_i-\mu)\\
+&=\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2+n(\frac{X_i-\mu}{\sigma})^2-\frac{2(\bar{X}-\mu)}{\sigma^2}(n\bar{X}-n\mu)\\
+&=\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2+n(\frac{X_i-\mu}{\sigma})^2-\frac{2n(\bar{X}-\mu)^2}{\sigma^2}\\
+&=\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2-n(\frac{X_i-\mu}{\sigma})^2\\
+&=\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2-(\frac{X_i-\mu}{\sigma/\sqrt{n}})^2
+\end{align*}</script><p>而</p>
+<script type="math/tex; mode=display">
+\Sigma_{i=1}^n(\frac{X_i-\mu}{\sigma})^2 \sim \chi^2_n \\
+(\frac{X_i-\mu}{\sigma/\sqrt{n}})^2 \sim \chi^2_1</script><p>则</p>
+<script type="math/tex; mode=display">
+\frac{1}{\sigma^2}\Sigma_{i=1}^n(X_i-\bar{X})^2 \sim \chi^2_{n-1}</script><p>这个结论很有用，是t分布做统计推断的关键。</p>
+<h1 id="t检验"><a href="#t检验" class="headerlink" title="t检验"></a>t检验</h1><p>以往的观点认为总体平均值为$\mu$，今天我们对这个结论不太满意，于是对总体进行随机抽样，得到$\bar{X}$。当然$\bar{X}$与$\mu$存在差异，但这不能说明这个差异存在显著性意义，即抽样总是带有误差，$\bar{X}$与$\mu$的差异一方面来自它们真正的差异（如果有的话），一方面来自随机误差。有假设检验的模型后，我们得以用概率的角度检验该抽象的极端程度，即，如果在原假设为真的情况下，若和当前抽样一样极端或更加极端的概率小于5%，则认为该平均数远离原假设参数的距离有显著差异。</p>
+<p>即检验$\bar{X}$的概率。将其转化为：</p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}</script><p>的概率，很显然上述止式服从标准正态分布，便可求其概率。但是其中，总体标准差$\sigma$并不知道，于是我们选择用样本估计总体。最直接想到的是下面这个量：</p>
+<script type="math/tex; mode=display">
+\frac{ \Sigma_i{(X_i-\bar{X})^2}}{n}</script><p>在点估计中可知，该样本统计量是「有偏的」，即对这个量求期望并不是总体方差，这个过程如下：</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+E(\frac{ \Sigma_i{(X_i-\bar{X})^2}}{n})&=\frac{1}{n}E(\Sigma_i{(X_i-\bar{X})^2})\\
+&=\frac{1}{n}E\Sigma_i[(X_i-\mu)-(\bar{X}-\mu)]^2\\
+&=\frac{1}{n}E\Sigma_i[(X_i-\mu)^2+(\bar{X}-\mu)^2-2(X_i-\mu)(\bar{X}-\mu)]\\
+&=\frac{1}{n}E[\Sigma_i(X_i-\mu)^2+n(\bar{X}-\mu)^2-2(\bar{X}-\mu)\Sigma_i(X_i-\mu)]\\
+&=\frac{1}{n}E[\Sigma_i(X_i-\mu)^2+n(\bar{X}-\mu)^2-2(\bar{X}-\mu)(n\bar{X}-n\mu)]\\
+&=\frac{1}{n}E[\Sigma_i(X_i-\mu)^2-n(\bar{X}-\mu)^2]\\
+&=\frac{1}{n}[n\sigma^2-n\sigma^2/n]\\
+&=\frac{n-1}{n}\sigma^2
+\end{align*}</script><p>所以要对其进行矫正，在把</p>
+<script type="math/tex; mode=display">
+\frac{ \Sigma_i{(X_i-\bar{X})^2}}{n} \frac{n}{n-1}=\frac{ \Sigma_i{(X_i-\bar{X})^2}}{n-1}</script><p>即可，我们将其定义为样本方差：</p>
+<script type="math/tex; mode=display">
+S^2=\frac{ \Sigma_i{(X_i-\bar{X})^2}}{n-1}</script><p>上面我们已求得</p>
+<script type="math/tex; mode=display">
+\frac{ \Sigma_i{(X_i-\bar{X})^2}}{\sigma^2} \sim \chi^2_{n-1}</script><p>则</p>
+<script type="math/tex; mode=display">
+\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}</script><p>这样我们就有了样本方差的分布。注意到</p>
+<script type="math/tex; mode=display">
+\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}</script><p>服从标准正态分布，则很容易定义一个t分布：</p>
+<script type="math/tex; mode=display">
+\frac{\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}}{\sqrt{\frac{(n-1)S^2}{\sigma^2}/(n-1)}}\\
+=\frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1)</script><p>就好像把$\sigma$用$S$顶替后由标准正态分布变成了t分布一样。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>t检验在统计检验中的原理</p><p><a href="http://yusaisai.xyz/2021/05/08/stat/">http://yusaisai.xyz/2021/05/08/stat/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>俞在问</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-05-08</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-05-09</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_email"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_qzone"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><div class="card"><div class="card-content" style="padding: 3em"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat_reward_qrcode.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/03/21/beauty-of-math-1/"><span class="level-item">数学之美之一—抽象与公理化</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/valine/1.4.14/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "y2aPp9pFJwC6VH6CzozCwm5i-gzGzoHsz",
+            appKey: "laBul05YsxmgyfDWQBrekJRn",
+            placeholder: "在问君在等待接受你的信号哟(／￣(ｴ)￣)／",
+            avatar: "retro",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: ["nick","mail"],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-08T06:12:08.000Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/stat/">t检验在统计检验中的原理</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-21T14:10:46.000Z">2021-03-21</time></p><p class="title"><a href="/2021/03/21/beauty-of-math-1/">数学之美之一—抽象与公理化</a></p><p class="categories"><a href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-04T17:48:47.000Z">2021-01-05</time></p><p class="title"><a href="/2021/01/05/nodejs-n/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-02T14:51:07.000Z">2021-01-02</time></p><p class="title"><a href="/2021/01/02/psy-method/">Course Instructions of Research Methods in Psychology</a></p><p class="categories"><a href="/categories/%E8%84%91%E7%A7%91%E5%AD%A6/">脑科学</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-08-07T05:34:29.000Z">2020-08-07</time></p><p class="title"><a href="/2020/08/07/title-change/">页选项卡处于前台或后台时的页面标题的切换</a></p><p class="categories"><a href="/categories/%E4%BB%A3%E7%A0%81/">代码</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/pulse-secure-vpn/"><span class="tag">-pulse secure -vpn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/"><span class="tag">数学思想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1/"><span class="tag">统计</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/"><span class="tag">课程信息</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="俞在问的博客" height="28"></a><p><span>&copy;2021. 俞在问</span>. Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus.</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button link-muted is-transparent is-large" target="_blank" rel="noopener" title="本站所有文章基于 CC-BY-NC 4.0 协议授权" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

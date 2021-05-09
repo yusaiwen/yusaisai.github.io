@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>数学之美之一—抽象与公理化 - 俞在问的博客</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="俞在问的博客"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="俞在问的博客"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文是一篇随笔  抽象是一种不太容易发现的美，用几个数学概念为例，谈一下抽象的美. 数学上的抽象往往是一个数学模型的建立，这个模型是根据具体问题提出来的. 我们发现诸多现实问题ABCD，它们都存在一些共同特征，于是我们从这些具体的问题中提取这些共同特征，构建一个抽象的模型$\pmb{K}$. 接着，我们研究模型$\pmb{K}$的性质. 这样任何具有这样特征的具体问题ABCD，便就都具有模型K的"><meta property="og:type" content="blog"><meta property="og:title" content="数学之美之一—抽象与公理化"><meta property="og:url" content="http://yusaisai.xyz/2021/03/21/beauty-of-math-1/"><meta property="og:site_name" content="俞在问的博客"><meta property="og:description" content="本文是一篇随笔  抽象是一种不太容易发现的美，用几个数学概念为例，谈一下抽象的美. 数学上的抽象往往是一个数学模型的建立，这个模型是根据具体问题提出来的. 我们发现诸多现实问题ABCD，它们都存在一些共同特征，于是我们从这些具体的问题中提取这些共同特征，构建一个抽象的模型$\pmb{K}$. 接着，我们研究模型$\pmb{K}$的性质. 这样任何具有这样特征的具体问题ABCD，便就都具有模型K的"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://yusaisai.xyz/img/og_image.png"><meta property="article:published_time" content="2021-03-21T14:10:46.000Z"><meta property="article:modified_time" content="2021-03-21T18:18:16.000Z"><meta property="article:author" content="俞在问"><meta property="article:tag" content="数学思想"><meta property="article:tag" content="随笔"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:image" content="/img/og_image.png"><meta property="twitter:creator" content="@yuzaiwen"><meta property="twitter:site" content="@yuzaiwen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://yusaisai.xyz/2021/03/21/beauty-of-math-1/"},"headline":"俞在问的博客","image":["http://yusaisai.xyz/img/og_image.png"],"datePublished":"2021-03-21T14:10:46.000Z","dateModified":"2021-03-21T18:18:16.000Z","author":{"@type":"Person","name":"俞在问"},"description":"本文是一篇随笔  抽象是一种不太容易发现的美，用几个数学概念为例，谈一下抽象的美. 数学上的抽象往往是一个数学模型的建立，这个模型是根据具体问题提出来的. 我们发现诸多现实问题ABCD，它们都存在一些共同特征，于是我们从这些具体的问题中提取这些共同特征，构建一个抽象的模型$\\pmb{K}$. 接着，我们研究模型$\\pmb{K}$的性质. 这样任何具有这样特征的具体问题ABCD，便就都具有模型K的"}</script><link rel="canonical" href="http://yusaisai.xyz/2021/03/21/beauty-of-math-1/"><link rel="alternate" href="/atom.xml" title="俞在问的博客" type="application/atom+xml"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;family=Bitter:wght@400;700&amp;family=Fira+Code&amp;display=swap"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container justify-content-center"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="俞在问的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">全部</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/messages">留言</a><a class="navbar-item" href="/about">我</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section" style="margin-top: 1rem"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-03-21T14:10:46.000Z" title="2021-03-21T14:10:46.000Z">2021-03-21</time>发表</span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span><span class="level-item">约1504字</span></div></div><h1 class="title is-3 is-size-4-mobile">数学之美之一—抽象与公理化</h1><div class="content"><blockquote>
+<p>本文是一篇随笔</p>
+</blockquote>
+<p><strong>抽象</strong>是一种不太容易发现的美，用几个数学概念为例，谈一下抽象的美.</p>
+<p>数学上的抽象往往是一个<strong>数学模型</strong>的建立，这个模型是根据<strong>具体问题</strong>提出来的. 我们发现诸多现实问题ABCD，它们都存在一些<strong>共同特征</strong>，于是我们从这些具体的问题中提取这些共同特征，构建一个<strong>抽象的模型$\pmb{K}$</strong>. 接着，我们研究模型$\pmb{K}$的<strong>性质</strong>. 这样任何具有这样特征的具体问题ABCD，便就都具有模型K的性质.</p>
+<p>科学就是发现共性和差异性，把诸多的现实问题抽象和归类，这是共性（构建模型$\pmb{K}$）；再应用到不同的具体问题中，这是具体（ABCD具有$\pmb{K}$的性质）. 这样由具体到抽象，再由抽象到具体的美妙特征，在数学中能完美的体现.</p>
+<p>我们看看一个数学的实例.</p>
+<span id="more"></span>
+<p>应用中用到代数知识往往是矩阵和行列式的变换，不过数学家们更关心<strong>线性空间</strong>. 我们先回顾一下$n$维向量空间，所谓$n$难向量空间指的是$n$元有序向量组$\pmb{K^n}$，既然定义为「有序」，那么两向量空间相等定义为：</p>
+<script type="math/tex; mode=display">
+(a_1,a_2, \cdots ,a_n)=(b_1,b_2, \cdots ,b_n)  :=  a_i=b_i (a \in [1,n])</script><p>接着定义两个运算:</p>
+<p>(1)$\pmb{K^n}$中的加法定义如下：</p>
+<script type="math/tex; mode=display">
+(a_1,a_2, \cdots ,a_n)+(b_1,b_2, \cdots ,b_n) \\
+:=(a_1+b_1, \cdots, a_n+b_n)</script><p>(2)$\pmb{K^n}$中的数乘定义如下：</p>
+<script type="math/tex; mode=display">
+k(a_1,a_2, \cdots ,a_n) := (ka_1,ka_2, \cdots ,ka_n) \text{ where } K \ne 0</script><p>再定义8个运算法则：</p>
+<ol>
+<li>加法交换率<script type="math/tex; mode=display">
+\alpha + \beta = \beta + \alpha</script></li>
+</ol>
+<ol>
+<li><p>加法结合率</p>
+<script type="math/tex; mode=display">
+(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)</script></li>
+<li><p>零元素：把$(0,\cdots ,0)$记作$\pmb{0}$，它使得：</p>
+<script type="math/tex; mode=display">
+\pmb{0}+\alpha = \alpha + \pmb{0} = \alpha</script></li>
+<li><p>负元素 $-\alpha$使得：</p>
+<script type="math/tex; mode=display">
+\alpha + (-\alpha) = \pmb{0}</script></li>
+<li>1: <script type="math/tex; mode=display">
+1\alpha = \alpha</script></li>
+</ol>
+<ol>
+<li><p>乘法结合率</p>
+<script type="math/tex; mode=display">
+(kl)\alpha = k(l\alpha )</script></li>
+<li><p>乘法分配率1</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+(k+l)\alpha = k\alpha + l\alpha</script><ol>
+<li>乘法分配率2</li>
+</ol>
+<script type="math/tex; mode=display">
+k(\alpha + \beta ) = k\alpha + k\beta</script><p>在此基础上引出了矩阵的<strong>秩</strong>的概念，就可以研究<strong>线性方程组有解的充分必要条件</strong>了.</p>
+<p>我们还可以进一步抽象. 向量，$n$维向量，矩阵三个例子有共同之处：一个集合，一个数域，两种运算（加法、数乘），8条运算法则，我们进一步抽象出线性空间的概念.</p>
+<p>设$\pmb{V}$是一个非空集合，$\pmb{F}$是一个域.：</p>
+<ol>
+<li><p><strong>加法</strong>：在$\pmb{V}$上定义一个代数运算</p>
+<script type="math/tex; mode=display">
+(\alpha, \beta) \longmapsto \gamma</script><p>其中$\gamma$称为$\alpha$和$\beta$的和</p>
+</li>
+<li><p><strong>纯量乘法</strong>：在$\pmb{F}$与$\pmb{V}$间定义一个运算，即$\pmb{F}\times \pmb{V}$到$\pmb{V}$的一个映射</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+(k,\alpha) \longmapsto\delta</script><p>其中$\delta$称为$k$与$\alpha$的纯量积，记为$k\alpha$.</p>
+<p>对于$\forall \alpha ,\beta ,\gamma \in \pmb{V}, \forall k,l \in \pmb{F}$，加法和乘法还满足下列8个运算法则：</p>
+<ol>
+<li>$\alpha + \beta = \beta + \alpha$</li>
+<li>$(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$</li>
+<li>$\pmb{0}+\alpha = \alpha, \forall \alpha \in \pmb{V}$，其中$\pmb{0}$称为$\pmb{V}$的零元素</li>
+<li>$\forall \alpha \in \pmb{V}, \exists \beta \in \pmb{V}, (\alpha + \beta) = \pmb{0}$，其中$\beta$被称为负元素</li>
+<li>$1\alpha = \alpha$</li>
+<li>$(kl)\alpha = k(l\alpha)$</li>
+<li>$(k+l)\alpha = k\alpha + k\beta$</li>
+<li>$k(\alpha + \beta) = k\alpha + k\beta$</li>
+</ol>
+<p>数域$\pmb{K}$上所有$n$元有序数组组成的集合$\pmb{K^n}$，对于有序数组的加法和数量乘法运算，成为数域$\pmb{K}$上的一个线性空间.</p>
+<p>数域$\pmb{K}$上所有$s\times n$矩阵组成的集合，对于矩阵的加法与数量乘法运算，成为数域$\pmb{K}$上的一个线性空间，记作$M_{S\times n}(K)$.</p>
+<p>多项式、复数域、数域$\pmb{K}$本身都可以看成线性空间. 这些例子表明，线性空间这一数学模型的适用性很广.  如果可以从线性空间的定义出发（该模型的特点），研究线性空间的性质，它们将对于所有具体的线性空间都成立. 包括核磁中的$K$空间.</p>
+<p>与抽象有关的另一个词是<strong>公理化</strong>. 所谓公理就是公认的道理，不需要证明，也不需要定义，它们做为问题讨论的前提出现，是问题探讨的起点.</p>
+<p>我们举几个例子.</p>
+<p>第一个是欧式几何，定义欧式几何是5条公理：</p>
+<ol>
+<li>从一点向另一点可以引一条直线；</li>
+<li>任意线段能无限延伸成一条直线；</li>
+<li>给定任意线段，可以以其一个端点作为圆心，该线段作为半径作一个圆；</li>
+<li>所有直角都相等；</li>
+<li>若两条直线都与第三条直线相交，并且在同一边的内角之和小于两个直角，则这两条直线在这一边必定相交.</li>
+</ol>
+<p>由此我们导出了丰富的几何系统（初高中所有几何知识均属于欧式几何）</p>
+<p>第二个是概率，概率的公理化定义非常有意思，是前苏联大数学家柯尔莫哥夫实现的，称之为柯式公理体系. 在该体系中，引进一个定义在$\mathcal{F}$（可简单理解为事件的集合）上的函数$P$（即概率）. 对$\mathcal{F}$中任一成员$A$，$P(A)$解释为事件$A$的概率. 柯式公理体系对这个函数$P$加上了几条要求(即公理)：</p>
+<ol>
+<li>$1 \le P(A) \le 1, \text{   }  \forall  A \text{ in }  \mathcal{F}$;</li>
+<li>$P(\Omega) = 1, P(\phi) = 0$;</li>
+<li>$\mathcal{F}$中的两互斥事件$A,B$，指 $P(A+B) = P(A)+P(B)$.</li>
+</ol>
+<p>在这三个简单的公理上，建立起了概率论丰富的大厦.</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>数学之美之一—抽象与公理化</p><p><a href="http://yusaisai.xyz/2021/03/21/beauty-of-math-1/">http://yusaisai.xyz/2021/03/21/beauty-of-math-1/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>俞在问</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-03-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-03-22</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="CC BY-NC 4.0" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/">数学思想</a><a class="link-muted mr-2" rel="tag" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_email"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_qzone"></a><a class="a2a_button_wechat"></a><a class="a2a_button_sina_weibo"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><div class="card"><div class="card-content" style="padding: 3em"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechat_reward_qrcode.JPG" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/05/08/stat/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">t检验在统计检验中的原理</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/01/05/nodejs-n/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/valine/1.4.14/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "y2aPp9pFJwC6VH6CzozCwm5i-gzGzoHsz",
+            appKey: "laBul05YsxmgyfDWQBrekJRn",
+            placeholder: "在问君在等待接受你的信号哟(／￣(ｴ)￣)／",
+            avatar: "retro",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: ["nick","mail"],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-05-08T06:12:08.000Z">2021-05-08</time></p><p class="title"><a href="/2021/05/08/stat/">t检验在统计检验中的原理</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-03-21T14:10:46.000Z">2021-03-21</time></p><p class="title"><a href="/2021/03/21/beauty-of-math-1/">数学之美之一—抽象与公理化</a></p><p class="categories"><a href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-04T17:48:47.000Z">2021-01-05</time></p><p class="title"><a href="/2021/01/05/nodejs-n/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-01-02T14:51:07.000Z">2021-01-02</time></p><p class="title"><a href="/2021/01/02/psy-method/">Course Instructions of Research Methods in Psychology</a></p><p class="categories"><a href="/categories/%E8%84%91%E7%A7%91%E5%AD%A6/">脑科学</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-08-07T05:34:29.000Z">2020-08-07</time></p><p class="title"><a href="/2020/08/07/title-change/">页选项卡处于前台或后台时的页面标题的切换</a></p><p class="categories"><a href="/categories/%E4%BB%A3%E7%A0%81/">代码</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/pulse-secure-vpn/"><span class="tag">-pulse secure -vpn</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6%E6%80%9D%E6%83%B3/"><span class="tag">数学思想</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%9F%E8%AE%A1/"><span class="tag">统计</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/"><span class="tag">课程信息</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="俞在问的博客" height="28"></a><p><span>&copy;2021. 俞在问</span>. Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus.</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button link-muted is-transparent is-large" target="_blank" rel="noopener" title="本站所有文章基于 CC-BY-NC 4.0 协议授权" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" target="_blank" rel="noopener" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
